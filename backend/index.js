@@ -7,6 +7,11 @@ const dotenv = require("dotenv");
 const helmet = require("helmet");
 const morgan = require("morgan");
 
+
+const userRoute = require("./routes/users")
+
+
+
 //import Route
 
 
@@ -46,3 +51,11 @@ mongoose
   .catch((error) => {
     console.log("error to connect :", error)
   })
+
+
+//ROUTE
+app.get("/", (req, res) => {
+  res.status(200).json("OKEE")
+})
+
+app.use("/api/users", userRoute)
