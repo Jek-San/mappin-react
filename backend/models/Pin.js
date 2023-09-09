@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PinSchema = new monggose.Schema(
+const PinSchema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -37,4 +37,4 @@ const PinSchema = new monggose.Schema(
   { timestamps: true }
 )
 
-module.export = mongoose.model("Pin", PinSchema)
+module.exports = mongoose.model("Pin", PinSchema)

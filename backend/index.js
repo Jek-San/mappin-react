@@ -9,6 +9,7 @@ const morgan = require("morgan");
 
 
 const userRoute = require("./routes/users")
+const pinRoute = require("./routes/pins")
 
 
 
@@ -40,6 +41,7 @@ app.use(helmet({
 //   console.log("Backend server is running!!!")
 // })
 
+
 mongoose
   .connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -59,3 +61,5 @@ app.get("/", (req, res) => {
 })
 
 app.use("/api/users", userRoute)
+
+app.use("/api/pins", pinRoute)
